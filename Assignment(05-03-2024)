@@ -1,0 +1,110 @@
+**bold text**.
+1.**Wap to find students who scored an average of more than 80**.
+let students =[
+{
+name: "Vinay",
+maths_marks: 90,
+science_marks: 90,
+english_marks: 90,
+hindi_marks: 100,
+computer_science_marks: 80,
+gender: "male"
+},
+{
+name: "Lavanya",
+maths_marks: 80,
+science_marks: 85,
+english_marks: 90,
+hindi_marks: 100,
+computer_science_marks: 80,
+gender: "female"
+},
+{
+name: "Sumit",
+maths_marks: 100,
+science_marks: 100,
+english_marks: 90,
+hindi_marks: 100,
+computer_science_marks: 80,
+gender: "male"
+},
+{
+name: "Mehul",
+maths_marks: 50,
+science_marks: 60,
+english_marks: 90,
+hindi_marks: 100,
+computer_science_marks: 80,
+gender: "male"
+},
+];
+
+const ResulName=[];
+for(let i=0;i<students.length;i++){
+let total_marks=students[i].maths_marks+students[i].science_marks+students[i].english_marks+students[i].hindi_marks+students[i].computer_science_marks
+  let average=total_marks/5;
+  if(average>80){
+    ResulName.push(students[i].name);
+    console.log(ResulName[i])  
+  }
+  
+}
+
+2. **find Students whose name starts with 'A**
+
+
+for(let i=0;i<students.length;i++){
+  if((students[i].name[0]=="A")){
+    console.log(students[i].name)
+  }
+ 
+}
+3 .find Male students
+
+for(let i=0;i<students.length;i++){
+  if(students[i].gender=="male"){
+    console.log(students[i].name)
+  }
+}
+
+4.find students who got more than 85 (not equal to) in maths
+
+for(let i=0;i<students.length;i++)
+  {
+    if(students[i].maths_marks>85){
+      console.log(students[i].name)
+    }
+  }
+
+5.find the total class math average.
+let total_math=0;
+for(let i=0;i<students.length;i++)
+  {
+    
+    total_math+=students[i].maths_marks;
+  }
+console.log(total_math/students.length);
+
+
+6.. find the total class science average
+
+let total_scinece=0;
+for(let i=0;i<students.length;i++)
+  {
+
+      total_scinece+=students[i].computer_science_marks;
+  }
+console.log(total_scinece/4);
+7. find students who have 'ab' in their name
+let flag=0;
+for(let i=0;i<students.length;i++){
+  if(students[i].name.includes("ab")){
+flag=1;
+    console.log(students[i].name);
+  }
+
+}
+if(flag==0)
+{
+console.log("Not Found");
+}
