@@ -1,0 +1,99 @@
+#include<bits/stdc++.h>
+using namespace std;
+class employeeDetails{
+    private:
+    string empName,address,role;
+    int empId,JoinYear,salary;
+ public:
+   employeeDetails(string name,string empaddress,string emprole,int empJoinYear,int empsalary,int empId){
+        empName=name;
+        address=empaddress;
+        role=emprole;
+        JoinYear=empJoinYear;
+        salary=empsalary;
+        this->empId=empId;
+    }
+    int getId(){
+        return empId;
+    }
+    string getName(){
+        return empName;
+    }
+    string getempaddress(){
+        return address;
+    }
+    string getEmpRole(){
+        return role;
+    }
+    int getempJoinYear(){
+        return JoinYear;
+    }
+    int getempsalary(){
+        return salary;
+    }
+   void setName(string name){
+       empName=name;
+   }
+   void setAddress(string empaddress){
+       address=empaddress;
+       
+   }
+   void setRole(string emprole){
+       role=emprole;
+   }
+   void setempJoinYear(int empJoinYear){
+       JoinYear=empJoinYear;
+       
+   }
+   void setEmpsalary(int empsalary){
+       salary=empsalary;
+       
+   }
+    void display(){
+        cout<<endl<<"Details of Employees are following"<<endl;
+        cout<<"Employee Id : "<<empId<<endl;
+        cout<<"Name : "<<empName<<endl;
+        cout<<"Address : "<<address<<endl;
+        cout<<"Empoyee Role : "<<role<<endl;
+        cout<<"Joining Year : "<<JoinYear<<endl;
+        cout<<"Empoyee salary: "<<salary<<endl;
+    }
+};
+class addNewEmployee{
+  public:
+  vector<employeeDetails>employee;
+  void create(employeeDetails obj){
+      employee.push_back(obj);
+  }
+   void read(){
+      for(auto it:employee){
+          it.display();
+      }
+  }
+    void update(int id){
+      for(auto it:employee){
+          if(it.getId()==id){
+              cout<<"Update for the Empolyee with Empolyee Id : "<<it.getId()<<endl;
+              it.setName("arjun");
+              break;
+          }
+      }
+  }
+  void delet(int id){
+      for(auto it:employee){
+          if(it.getId()==id){
+              employee.erase(std::next(employee.begin(),id-1));
+          }
+      }
+     
+  }
+};
+int main(){
+   addNewEmployee emp;
+   emp.create(employeeDetails("Ajay","Lucknow","Front-End",2024,20000,1));
+   emp.create(employeeDetails("Adarsh","Muradnagar","Back-End",2024,200012,2));
+   emp.read();
+   emp.delet(1);
+   emp.read();
+    return 0;
+}
