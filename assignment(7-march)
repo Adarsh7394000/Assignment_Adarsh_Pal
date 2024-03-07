@@ -1,0 +1,331 @@
+**1.Primitive Data Types in c sharp**
+
+| name | size | Use |
+| --- | --- | --- |
+| int  | 4 byte | store the whole number |
+| long | 8 byte | store the whole number |
+| float | 4byte | store the fraction number |
+| double | 8 byte | store the fraction number |
+| char | 2 byte | store 1 letter |
+| string | 2 byte per char | stream of letters |
+| bool | 1 bit | true of false |
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+        static void Main(string[] args)
+            
+        {
+            Console.WriteLine("enter the integer");
+            string st1=Console.ReadLine();
+            int a=Convert.ToInt32(st1); 
+            Console.WriteLine("enter the double number");
+            string st2=Console.ReadLine();
+            double b=Convert.ToDouble(st2);
+            Console.WriteLine("enter the character");
+            string st3 = Console.ReadLine();
+            char c=Convert.ToChar(st3);
+            Console.WriteLine("enter the true or false");
+            string st4 = Console.ReadLine();
+            bool boolValue = Convert.ToBoolean(st4);
+            Console.WriteLine($"Integer Value :{a} \nDouble Value :{b}
+            \nCharacter Value : {c}\nBoolean Value : {boolValue}");
+            Console.WriteLine($"Arithmatic Operations:\n Addition : 
+            {a+b}\nSubtraction : {a-b}\nMutiplication : {a*b}\nDivision : {a/b}");
+
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
+
+**2.Type casting**
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+        static void Main(string[] args)
+            
+        {
+            int a;
+            double b;
+            char c = 'A';
+            Console.WriteLine("Implicit Type Casting");
+            a = c;
+            b = a;
+            Console.WriteLine($"Integer Value :{a} \nDouble Value :{b}
+            \nCharacter Value : {c}");
+            Console.WriteLine("Explicit Type Casting");
+            double var = 78.4;
+            int x = (int)var;
+            char y = (char)var;
+            Console.WriteLine($"Double Value: {var}\nInteger Value: {x}
+            \nCharacter Value:{y}");
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
+
+**3.Operators**
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+        public static double Area(double radius)
+        {
+            return 3.14 * radius * radius;
+        }
+        static void Main(string[] args)
+            
+        {
+            Console.WriteLine("Enter radius of the circle to calculate the area of circle");
+            double radius=Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine($"Area of the Circle : {Area(radius)}");
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
+
+**4.Assignment Operators**
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+  
+        static void Main(string[] args)
+            
+        {
+            double balance = 0;
+            Console.WriteLine("Enter Money for Credit");
+            double a=Convert.ToDouble(Console.ReadLine());
+            balance += a;
+            Console.WriteLine($"Your Balance is {balance}");
+            Console.WriteLine("Enter Money for Debit");
+            double b = Convert.ToDouble(Console.ReadLine());
+            balance -= b;
+            Console.WriteLine($"Your Balance is {balance}");
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
+
+**5.Comparison Operators**
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+  
+        static void Main(string[] args)
+            
+        {
+            int[] student1 = { 20, 30, 40, 90, 76 };
+            int[] student2 = { 20, 67, 21, 76, 32 };
+            int mark1 = 0;
+            int mark2 = 0;
+            for(int i=0;i<student1.Length; i++)
+            {
+                mark1 += student1[i];
+                mark2 += student2[i];
+            }
+            if (mark1 > mark2)
+            {
+                Console.WriteLine("Student 1 Performance is Better");
+            }
+            else if (mark1 == mark2)
+            {
+                Console.WriteLine("Both Studnet get the equal marks")
+            }
+            else
+            {
+                Console.WriteLine("Student 2 Performance is Better");
+            }
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
+
+**6.Logical Operators**
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+  
+        static void Main(string[] args)
+            
+        {
+            Console.WriteLine("Enter Year to check Leap year");
+            int year=Convert.ToInt32(Console.ReadLine());
+            if (year % 400 == 0 || (year % 100 != 0) && (year % 4 == 0))
+            {
+                Console.WriteLine($"year {year} is a Leap year");
+            }
+            else
+            {
+                Console.WriteLine($"year {year} is not a Leap year");
+            }
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
+
+**7.Math**
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+  
+        static void Main(string[] args)
+            
+        {
+            Console.WriteLine("Enter the value of base");
+            double b = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the value of perpendicular");
+            double p = Convert.ToDouble(Console.ReadLine());
+            double c = Math.Pow(b, 2) + Math.Pow(p, 2);
+            double h = Math.Sqrt(c);
+            Console.WriteLine($"Value of hypotenus: {h}");
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
+
+**8.String**
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+  
+        static void Main(string[] args)
+            
+        {
+            Console.WriteLine("Enter First Name");
+            string FirstName = Console.ReadLine();
+            Console.WriteLine("Enter last name");
+            string LastName = Console.ReadLine();
+            string FullName=FirstName+" "+LastName;
+            Console.WriteLine($"Full Name : {FullName}");
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
+
+**9.Interpolation**
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+  
+        static void Main(string[] args)
+            
+        {
+            Console.WriteLine("Enter length of Rectangle");
+            double l = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter breadth of Rectangle");
+            double b = Convert.ToDouble(Console.ReadLine());
+            double area = l * b;
+            Console.WriteLine($"Area of Rectangle is : {area}");
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
+
+**10.Access Strings**
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+  
+        static void Main(string[] args)
+            
+        {
+            Console.WriteLine("Enter String");
+            string st = Console.ReadLine();
+            int mid = st.Length/2;
+            Console.WriteLine($"Middle Character of given string is : {st[mid]}");
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
+
+1. **Special Characters**
+
+```csharp
+
+using System;
+namespace Hello
+{
+     class Program
+    {
+  
+        static void Main(string[] args)
+            
+        {
+            
+            string st ="My Name is Adarsh";
+            Console.WriteLine($"You Actual message is : {st}");
+            Console.WriteLine("Formated Message is :My Name\nis\tAdarsh");
+            Console.ReadLine();
+        }
+    }
+}
+ 
+```
